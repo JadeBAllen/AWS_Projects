@@ -1,0 +1,22 @@
+# Highly Available Web App (AWS)
+
+A web app running on two servers in private subnets across two Availability Zones, behind an Application Load Balancer. Auto Scaling replaces failed servers automatically.
+
+
+
+## What I built
+- VPC with public and private subnets in two AZs, plus a NAT gateway
+- Security groups: servers only accept traffic from the load balancer
+- Launch template with a startup script that installs nginx
+- Application Load Balancer and an Auto Scaling group (2–4 servers)
+- Server access through Session Manager (no SSH)
+
+## Proof it works
+![Two healthy targets](screenshots/03-healthy-targets.png)
+![Self-healing after a server was terminated](screenshots/06-asg-self-healing.png)
+
+## Problem I solved
+One target was unhealthy in us-east-1b. The Auto Scaling group had launched it into a public subnet with no public IP, so it couldn't download nginx. I switched the group to the private subnet and replaced the instance.
+
+## Cleanup
+Deleted the Auto Scaling group, load balancer, target group, NAT gateway, Elastic IP and VPC.
