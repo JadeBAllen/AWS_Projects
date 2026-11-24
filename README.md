@@ -11,7 +11,7 @@ Project	Skills
 Projects
 #	Project	What it shows	Status
 ## 01--DONE
-Highly available web application	VPC across two Availability Zones, public/private subnets, NAT gateway, Application Load Balancer, Auto Scaling, self-healing test
+[Highly available web application](https://github.com/JadeBAllen/AWS_Projects/tree/Highly-Available-Web-Services)	VPC across two Availability Zones, public/private subnets, NAT gateway, Application Load Balancer, Auto Scaling, self-healing test
 
 ## 02	
 Least-privilege access and encryption	Tag-based access control (ABAC), permission boundaries, KMS customer-managed keys, HTTPS-only bucket policy, expiring share links
